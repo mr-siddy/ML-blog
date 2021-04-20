@@ -6,8 +6,8 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: first blog 
-description: An easy to use blogging platform with support for Jupyter Notebooks.
+title: mr-siddy experimental lab
+description: This is blog post meant to support programmers to the field of Machine Learning and Data Science
 github_username: mr-siddy
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "The-Student-Blog"
