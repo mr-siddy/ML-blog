@@ -90,7 +90,7 @@
   
     
         ,"post8": {
-            "title": "Boolean variables",
+            "title": "Python-Basics",
             "content": "bool() . False . type(True) . bool . my_str = &quot;siddy&quot; . print(my_str.isalnum()) print(my_str.isupper()) . True False . my_str=&#39;sid123&#39; my_str.isalnum() . True . Lists . type([]) . list . list = [&#39;mathematics&#39;,100,10,20,122,230] print(list) . [&#39;mathematics&#39;, 100, 10, 20, 122, 230] . list[:] # 100 to 230 list[1:] . [100, 10, 20, 122, 230] . list[1:5] # left is the same index and right is index we want+1 . [100, 10, 20, 122] . print(list) . [&#39;mathematics&#39;, 100, 10, 20, 122, 230, &#39;sid&#39;, [&#39;sid1&#39;, &#39;sid2&#39;], &#39;sid&#39;, [&#39;sid1&#39;, &#39;sid2&#39;], &#39;sid&#39;, [&#39;sid1&#39;, &#39;sid2&#39;]] . list.insert(1,&quot;saxena&quot;) print(list) . [&#39;mathematics&#39;, &#39;saxena&#39;, &#39;saxena&#39;, 100, 10, 20, 122, 230, &#39;sid&#39;, [&#39;sid1&#39;, &#39;sid2&#39;], &#39;sid&#39;, [&#39;sid1&#39;, &#39;sid2&#39;], &#39;sid&#39;, [&#39;sid1&#39;, &#39;sid2&#39;]] . list2 = [1,2,3,4,5] print(list2) . [1, 2, 3, 4, 5] . list2.extend([6,7]) list2 . [1, 2, 3, 4, 5, 6, 7] . operations on list . sum(list2) . 28 . list2.pop() . 7 . list2.count(2) . 1 . list2.index(2,1,4) . 1 . print(min(list2)) print(max(list2)) . 1 6 . list2*2 . [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6] .",
             "url": "https://mr-siddy.github.io/The-Student-Blog/2021/04/21/Python-Basics.html",
             "relUrl": "/2021/04/21/Python-Basics.html",
