@@ -40,7 +40,7 @@ baseurl: "/The-Student-Blog" # the subpath of your site, e.g. "/blog".
 minima:
   social_links:
     twitter: mr_siddy
-    github: fastai
+    github: mr-siddy
 
 # Set this to true to get LaTeX math equation support
 use_math: 
@@ -49,7 +49,7 @@ use_math:
 show_description: true
 
 # Set this to true to display image previews on home page, if they exist
-show_image: false
+show_image: true
 
 # Set this to true to turn on annotations with hypothes.is (https://web.hypothes.is/)
 annotations: false
