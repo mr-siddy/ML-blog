@@ -1,1 +1,1 @@
-Sitemap: https://mr-siddy.github.io/The-Student-Blog/sitemap.xml
+Sitemap: https://mr-siddy.github.io/MLBlog/sitemap.xml
