@@ -20,6 +20,22 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ML-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mr-siddy.github.io/ML-blog/feed.xml" title="mr-siddy experimental lab" /><link rel="shortcut icon" type="image/x-icon" href="/ML-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
 
 <script>
 function wrap_img(fn) {
@@ -88,19 +104,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/mr-siddy/The-Student-Blog/tree/master/_notebooks/2021-04-22-Pyforest.ipynb" role="button" target="_blank">
+    <a href="https://github.com/mr-siddy/ML-blog/tree/master/_notebooks/2021-04-22-Pyforest.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/ML-blog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/mr-siddy/The-Student-Blog/master?filepath=_notebooks%2F2021-04-22-Pyforest.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/mr-siddy/ML-blog/master?filepath=_notebooks%2F2021-04-22-Pyforest.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/ML-blog/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/mr-siddy/The-Student-Blog/blob/master/_notebooks/2021-04-22-Pyforest.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/mr-siddy/ML-blog/blob/master/_notebooks/2021-04-22-Pyforest.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/ML-blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -180,10 +196,10 @@ Note: you may need to restart the kernel to use updated packages.
 
 
 
-<div id="3329e10d-ea7e-4294-a130-5673ce997d05"></div>
+<div id="14a97561-d92b-4245-8ebf-50c30c358c58"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3329e10d-ea7e-4294-a130-5673ce997d05');
+var element = $('#14a97561-d92b-4245-8ebf-50c30c358c58');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import pandas as pd'); }
     
@@ -385,10 +401,10 @@ var element = $('#3329e10d-ea7e-4294-a130-5673ce997d05');
 
 
 
-<div id="f4e72606-ce14-4079-af62-4e626cd7cb50"></div>
+<div id="cc271435-0935-4a5d-bd8d-1dd214299bb6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f4e72606-ce14-4079-af62-4e626cd7cb50');
+var element = $('#cc271435-0935-4a5d-bd8d-1dd214299bb6');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import pandas as pd\nimport matplotlib.pyplot as plt'); }
     
@@ -402,10 +418,10 @@ var element = $('#f4e72606-ce14-4079-af62-4e626cd7cb50');
 
 
 
-<div id="23e8debf-63b0-48b6-9b04-05fe4c7d0d65"></div>
+<div id="3af82efa-2d95-492b-86d2-190ab3b47180"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#23e8debf-63b0-48b6-9b04-05fe4c7d0d65');
+var element = $('#3af82efa-2d95-492b-86d2-190ab3b47180');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import pandas as pd\nimport matplotlib.pyplot as plt'); }
     
@@ -419,10 +435,10 @@ var element = $('#23e8debf-63b0-48b6-9b04-05fe4c7d0d65');
 
 
 
-<div id="f4630119-6949-480a-840f-3d2a33e8f222"></div>
+<div id="53585af0-3e31-4d53-be85-1189bb01cb15"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f4630119-6949-480a-840f-3d2a33e8f222');
+var element = $('#53585af0-3e31-4d53-be85-1189bb01cb15');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import pandas as pd\nimport matplotlib.pyplot as plt'); }
     
@@ -436,10 +452,10 @@ var element = $('#f4630119-6949-480a-840f-3d2a33e8f222');
 
 
 
-<div id="eb8e8bd3-4299-4576-b623-7e074cbdbc87"></div>
+<div id="a4897994-f7ae-4fd7-8673-c9001d6953dd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#eb8e8bd3-4299-4576-b623-7e074cbdbc87');
+var element = $('#a4897994-f7ae-4fd7-8673-c9001d6953dd');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import pandas as pd\nimport matplotlib.pyplot as plt'); }
     
@@ -487,10 +503,10 @@ var element = $('#eb8e8bd3-4299-4576-b623-7e074cbdbc87');
 
 
 
-<div id="c49745eb-8a05-410b-862c-6e245c7d3f90"></div>
+<div id="5d854a70-6aeb-4569-b7c7-58f23cceeade"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c49745eb-8a05-410b-862c-6e245c7d3f90');
+var element = $('#5d854a70-6aeb-4569-b7c7-58f23cceeade');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import matplotlib.pyplot as plt\nimport pandas as pd\nimport numpy as np'); }
     
@@ -582,10 +598,10 @@ import numpy as np
 
 
 
-<div id="ba6d924d-eee9-4b3e-9de7-7ee79aaac9a7"></div>
+<div id="b0a4506d-4190-4c11-a18a-0bbc728ea462"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ba6d924d-eee9-4b3e-9de7-7ee79aaac9a7');
+var element = $('#b0a4506d-4190-4c11-a18a-0bbc728ea462');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import matplotlib.pyplot as plt\nimport pandas as pd\nimport numpy as np'); }
     
@@ -819,10 +835,10 @@ var element = $('#ba6d924d-eee9-4b3e-9de7-7ee79aaac9a7');
 
 
 
-<div id="5339988c-7d34-436f-8c19-0b67db976c9c"></div>
+<div id="e895545e-fe8d-4d43-9a81-137b26661183"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5339988c-7d34-436f-8c19-0b67db976c9c');
+var element = $('#e895545e-fe8d-4d43-9a81-137b26661183');
 
         if (window._pyforest_update_imports_cell) { window._pyforest_update_imports_cell('import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\nimport numpy as np'); }
     
