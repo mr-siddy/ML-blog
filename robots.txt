@@ -1,1 +1,1 @@
-Sitemap: https://mr-siddy.github.io/MLBlog/sitemap.xml
+Sitemap: https://mr-siddy.github.io/ML-blog/sitemap.xml
