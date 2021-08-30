@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>U Net From Scratch Using Pytorch | mr-siddy experimental lab</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="U Net From Scratch Using Pytorch" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="U-Net Paper Implementation using PyTorch" />
+<meta property="og:description" content="U-Net Paper Implementation using PyTorch" />
+<link rel="canonical" href="https://mr-siddy.github.io/ML-blog/2021/06/20/U-Net-from-Scratch-using-PyTorch.html" />
+<meta property="og:url" content="https://mr-siddy.github.io/ML-blog/2021/06/20/U-Net-from-Scratch-using-PyTorch.html" />
+<meta property="og:site_name" content="mr-siddy experimental lab" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-20T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://mr-siddy.github.io/ML-blog/2021/06/20/U-Net-from-Scratch-using-PyTorch.html","@type":"BlogPosting","headline":"U Net From Scratch Using Pytorch","dateModified":"2021-06-20T00:00:00-05:00","datePublished":"2021-06-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mr-siddy.github.io/ML-blog/2021/06/20/U-Net-from-Scratch-using-PyTorch.html"},"description":"U-Net Paper Implementation using PyTorch","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ML-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mr-siddy.github.io/ML-blog/feed.xml" title="mr-siddy experimental lab" /><link rel="shortcut icon" type="image/x-icon" href="/ML-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ML-blog/">mr-siddy experimental lab</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ML-blog/about/">About Me</a><a class="page-link" href="/ML-blog/search/">Search</a><a class="page-link" href="/ML-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">U Net From Scratch Using Pytorch</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-20T00:00:00-05:00" itemprop="datePublished">
+        Jun 20, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>U-Net Paper Implementation using PyTorch</strong></p>
+
+<p><strong>Main Diagram</strong></p>
+
+<p><img src="https://mr-siddy.github.io/ML-blog/assets/img/2021-06-20-U-Net-from-Scratch-using-PyTorch/media/image1.png" alt="" /></p>
+
+<p><strong>Network Architecture</strong></p>
+
+<p>The network architecture is illustrated in Figure 1. It consists of a contracting path (left side) and an expansive path (right side). The contracting path follows the typical architecture of a convolutional network. It consists of the repeated application of two 3x3 convolutions (unpadded convolutions), each followed by a rectified linear unit (ReLU) and a 2x2 max pooling operation with stride 2 for downsampling. At each downsampling step, we double the number of feature channels. Every step in the expansive path consists of an upsampling of the feature map followed by a 2x2 convolution (“up-convolution”) that halves the number of feature channels, a concatenation with the correspondingly cropped feature map from the contracting path, and two 3x3 convolutions, each followed by a ReLU. The cropping is necessary due to the loss of border pixels in every convolution. At the final layer, a 1x1 convolution is used to map each 64- component feature vector to the desired number of classes. In total the network has 23 convolutional layers. To allow a seamless tiling of the output segmentation map (see Figure 2), it is important to select the input tile size such that all 2x2 max-pooling operations are applied to a layer with an even x- and y-size.</p>
+
+<table>
+<tbody>
+<tr class="odd">
+<td>"""<br />
+Created on Mon Jun 20 16:08:19 2021<br />
+<br />
+@author: mr-siddy<br />
+"""<br />
+<br />
+<strong>import</strong> torch<br />
+<strong>import</strong> torch.nn <strong>as</strong> nn<br />
+<br />
+<br />
+<strong>def</strong> <strong>double_conv</strong>(in_c, out_c):<br />
+conv = nn.Sequential(<br />
+nn.Conv2d(in_c, out_c, kernel_size=3),<br />
+nn.ReLU(inplace=<strong>True</strong>),<br />
+nn.Conv2d(out_c, out_c, kernel_size=3),<br />
+nn.ReLU(inplace=<strong>True</strong>)<br />
+)<br />
+<strong>return</strong> conv<br />
+<br />
+<strong>def</strong> <strong>crop_img</strong>(tensor, target_tensor):<br />
+target_size = target_tensor.size()[2]<br />
+tensor_size = tensor.size()[2]<br />
+delta = tensor_size - target_size<br />
+delta = delta // 2<br />
+<strong>return</strong> tensor[:, :, delta:tensor_size-delta, delta:tensor_size-delta]<br />
+<br />
+<br />
+<strong>class</strong> <strong>UNet</strong>(nn.Module):<br />
+<strong>def</strong> <strong>__init__</strong>(self):<br />
+super(UNet, self).__init__()<br />
+<br />
+self.max_pool_2x2 = nn.MaxPool2d(kernel_size=2, stride=2)<br />
+self.down_conv_1 = double_conv(1, 64)<br />
+self.down_conv_2 = double_conv(64, 128)<br />
+self.down_conv_3 = double_conv(128, 256)<br />
+self.down_conv_4 = double_conv(256, 512)<br />
+self.down_conv_5 = double_conv(512, 1024)<br />
+<br />
+self.up_trans_1 = nn.ConvTranspose2d(<br />
+in_channels=1024,<br />
+out_channels=512,<br />
+kernel_size=2,<br />
+stride=2)<br />
+<br />
+self.up_conv_1 = double_conv(1024, 512)<br />
+<br />
+self.up_trans_2 = nn.ConvTranspose2d(<br />
+in_channels=512,<br />
+out_channels=256,<br />
+kernel_size=2,<br />
+stride=2)<br />
+<br />
+self.up_conv_2 = double_conv(512, 256)<br />
+<br />
+self.up_trans_3 = nn.ConvTranspose2d(<br />
+in_channels=256,<br />
+out_channels=128,<br />
+kernel_size=2,<br />
+stride=2)<br />
+<br />
+self.up_conv_3 = double_conv(256, 128)<br />
+<br />
+self.up_trans_4 = nn.ConvTranspose2d(<br />
+in_channels=128,<br />
+out_channels=64,<br />
+kernel_size=2,<br />
+stride=2)<br />
+<br />
+self.up_conv_4 = double_conv(128, 64)<br />
+<br />
+self.out = nn.Conv2d(<br />
+in_channels=64,<br />
+out_channels=2,<br />
+kernel_size=1)<br />
+<br />
+<br />
+<strong>def</strong> <strong>forward</strong>(self, image):<br />
+<em># bs, channel = c, height = h, width = w</em><br />
+<br />
+<em># encoder</em><br />
+x1 = self.down_conv_1(image) <em># copy and crop</em><br />
+x2 = self.max_pool_2x2(x1)<br />
+x3 = self.down_conv_2(x2) <em># copy and crop</em><br />
+x4 = self.max_pool_2x2(x3)<br />
+x5 = self.down_conv_3(x4) <em># copy and crop</em><br />
+x6 = self.max_pool_2x2(x5)<br />
+x7 = self.down_conv_4(x6) <em># copy and crop</em><br />
+x8 = self.max_pool_2x2(x7)<br />
+x9 = self.down_conv_5(x8)<br />
+<br />
+<em># decoder</em><br />
+x = self.up_trans_1(x9)<br />
+y = crop_img(x7, x)<br />
+x = self.up_conv_1(torch.cat([x, y], 1))<br />
+<br />
+x = self.up_trans_2(x)<br />
+y = crop_img(x5, x)<br />
+x = self.up_conv_2(torch.cat([x, y], 1))<br />
+<br />
+x = self.up_trans_3(x)<br />
+y = crop_img(x3, x)<br />
+x = self.up_conv_3(torch.cat([x, y], 1))<br />
+<br />
+x = self.up_trans_4(x)<br />
+y = crop_img(x1, x)<br />
+x = self.up_conv_4(torch.cat([x, y], 1))<br />
+<br />
+x = self.out(x)<br />
+print(x.size())<br />
+<br />
+<strong>return</strong> x<br />
+<br />
+<br />
+<br />
+<br />
+<strong>if</strong> __name__ == '__main__':<br />
+image = torch.rand((1, 1, 572, 572))<br />
+model = UNet()<br />
+print(model(image))</td>
+</tr>
+</tbody>
+</table>
+
+  </div><a class="u-url" href="/ML-blog/2021/06/20/U-Net-from-Scratch-using-PyTorch.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ML-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ML-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ML-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>This is blog post meant to support programmers to the field of Machine Learning and Data Science</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/mr-siddy" title="mr-siddy"><svg class="svg-icon grey"><use xlink:href="/ML-blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/mr_siddy" title="mr_siddy"><svg class="svg-icon grey"><use xlink:href="/ML-blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
