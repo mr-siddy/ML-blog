@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Iot In Healthcare | mr-siddy experimental lab</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Iot In Healthcare" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="IoT in Healthcare" />
+<meta property="og:description" content="IoT in Healthcare" />
+<link rel="canonical" href="https://mr-siddy.github.io/ML-blog/2022/01/19/IoT-in-Healthcare.html" />
+<meta property="og:url" content="https://mr-siddy.github.io/ML-blog/2022/01/19/IoT-in-Healthcare.html" />
+<meta property="og:site_name" content="mr-siddy experimental lab" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-19T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://mr-siddy.github.io/ML-blog/2022/01/19/IoT-in-Healthcare.html","@type":"BlogPosting","headline":"Iot In Healthcare","dateModified":"2022-01-19T00:00:00-06:00","datePublished":"2022-01-19T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mr-siddy.github.io/ML-blog/2022/01/19/IoT-in-Healthcare.html"},"description":"IoT in Healthcare","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ML-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://mr-siddy.github.io/ML-blog/feed.xml" title="mr-siddy experimental lab" /><link rel="shortcut icon" type="image/x-icon" href="/ML-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ML-blog/">mr-siddy experimental lab</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ML-blog/about/">About Me</a><a class="page-link" href="/ML-blog/search/">Search</a><a class="page-link" href="/ML-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Iot In Healthcare</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-19T00:00:00-06:00" itemprop="datePublished">
+        Jan 19, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>IoT in Healthcare</strong></p>
+
+<p>Author : Siddhant Saxena ( Manipal University Jaipur, siddhantsaxenaphy@gmail.com)</p>
+
+<p>In healthcare IoT can be referenced as Internet of Medical Things, which is just a subset of Iot devices and deals specially with patient data, these devices can be worn like a fitbit that an individual wears and fitbit passively monitors the activities of that individual. Another class of devices that are Ambient such as sensors that exist in hospital beds or a monitor room and they either tell medical readings, vital signs or report on a patient’s behaviour.</p>
+
+<p><strong>Applications of IOT in Medical Sciences</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient Monitoring</th>
+      <th>Research and Life Sciences</th>
+      <th>Smart Hospitals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Remote care</td>
+      <td>Integrate IoT and other data for research</td>
+      <td>Streamline hospital processes with automation</td>
+    </tr>
+    <tr>
+      <td>Chronic Disease Management</td>
+      <td>Clinical trials</td>
+      <td>Augment Care teams</td>
+    </tr>
+    <tr>
+      <td>Tele-health</td>
+      <td>Lab Data Analytics</td>
+      <td>Improve workflow safety and efficiency</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Challenges building Internet of Medical Things (IoMT) Solution</strong></p>
+
+<p><strong>Latency in arriving data</strong></p>
+
+<p>Data generated by sensor is transmitted to a server for further examination, but due to several issues like slow internet connection can cause latency in arriving data</p>
+
+<p><strong>Out of order data</strong></p>
+
+<p>Data order is very important to monitor constant health, the device that is worn by individuals is dependent on internet connectivity of the internet and it can send recent data first and older data later but device and system have to make sure that data sent to server is in chronological order.</p>
+
+<p><strong>Balancing Latency and load</strong></p>
+
+<p>When there is a wearable device using some kind of gateway for internet connection like a smartphone we can have data that’s being collected for hours and once internet connectivity is established then data will be send and transmitted so we should be able to handle that burst of data then make sense of it appropriately</p>
+
+<p><strong>Application of IoT in Healthcare :</strong></p>
+
+<p><strong>Remote Heart Rate monitoring using IoT device and Artificial Intelligence</strong></p>
+
+<p>Introduction</p>
+
+<p>People suffering from heart related problems need constant monitoring, and often doctors suggest they have regular check-ups, but when there are a large number of patients connected to a hospital, it is very difficult to keep monitoring different people simultaneously. Here proposed methodology is based on the remote care application of IoT which uses sensors, raspberry pi and Artificial intelligence system to monitor large numbers of patients remotely and in an efficient manner.</p>
+
+<p>Remote ECG and Heart Rate Monitoring IoT Device</p>
+
+<p>The following are the components required to build a patient monitoring system.</p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>Raspberry Pi</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Pulse Sensor</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>ADS1115 ADC module</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Jumper wire</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Power supply (AC/DC)</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Circuit Diagram to Connect Raspberry Pi to Sensors :</p>
+
+<p><img src="https://mr-siddy.github.io/ML-blog/assets/img/2022-01-19-IoT-in-Healthcare/media/image1.png" alt="" /></p>
+
+<p>Figure 1: IoT Device Setup</p>
+
+<p>Configuration of Heart Rate Monitoring system</p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>Signal pin of pulse sensor -&gt; A0 of ADC Module</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Vcc pin of pulse sensor -&gt; 3.3V of Raspberry</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>GND pin of pulse sensor -&gt; GND of Pi</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Tx of RPI-&gt; Rx of RPI</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>GND of ADC module -&gt; GND of RPI</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>VCC of ADC Module -&gt; +5v Of RPI</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>SCL and SDA of ADC module -&gt; SCL and SDA of RPI</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Interface ADC module via 12C communication for getting analog output of pulse sensor. After getting raw analog output from pulse sensor, difference between upper peak and lower peak points can be used to convert them into BPM and then send raw analog output and BPM to serial port which is read from processing IDE to generate graphs.This ECG data captured from the sensor can be transmitted by raspberry pi to any server that is used by hospitals to monitor the patient’s health conditions. But still to track the health condition of a large number of patients is very difficult, this can be solved using artificial intelligence.</p>
+
+<p><strong>Raspberry Pi ECG Server with Integrated Artificial Intelligence</strong></p>
+
+<p>Raspberry pi can be used as a server which captures ecg data and simultaneously feeds it into an LSTM Autoencoder (RNN) to flag any type of anomaly in ECG normal data. This model is trained on ECG 5000 Publicly available dataset, which is then capable of classifying the ecg signal in 5 types of heartbeat classes.</p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>Normal (N)</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>R-on-T Premature Ventricular Contraction (R-on-T PVC)</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Premature Ventricular Contraction (PVC)</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Supra-ventricular Premature or Ectopic Beat (SP or EB)</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Unclassified Beat (UB).</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>If any type of heartbeat other than Normal occurs in any device, the raspberry pi server will automatically send information to the hospital to get instant support in case of emergency.</p>
+
+<p><strong>Complete architecture of IoMT device</strong></p>
+
+<p><img src="https://mr-siddy.github.io/ML-blog/assets/img/2022-01-19-IoT-in-Healthcare/media/image2.png" alt="" /></p>
+
+<p>Figure 2: Remote IoT Device for Heart Rate Monitoring System</p>
+
+<p>In figure 2, This is device architecture for an individual patient generates flags for 5 different types of heart diseases, and those of high risk can be easily segregated by hospitals for emergency situations.</p>
+
+  </div><a class="u-url" href="/ML-blog/2022/01/19/IoT-in-Healthcare.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ML-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ML-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ML-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>This is blog post meant to support programmers to the field of Machine Learning and Data Science</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/mr-siddy" target="_blank" title="mr-siddy"><svg class="svg-icon grey"><use xlink:href="/ML-blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/mr_siddy" target="_blank" title="mr_siddy"><svg class="svg-icon grey"><use xlink:href="/ML-blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
